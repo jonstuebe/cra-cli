@@ -1,7 +1,8 @@
 {
   "name": "cra-cli",
   "version": "0.1.0",
-  "description": "a cli file generator (components & containers)",
+  "description":
+    "a cli file generator (components & containers) for create-react-app projects",
   "main": "cli.js",
   "bin": "./cli.js",
   "repository": "https://github.com/jonstuebe/cra-cli",
