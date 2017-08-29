@@ -28,9 +28,11 @@ To generate a container run the following:
 
 ### Options
 
- ```-V, --version    output the version number
+ ```
+ -V, --version    output the version number
  -c, --component  Component
  -C, --container  Container
  -d, --directory  Create Directories for components/containers
  -f, --force      Overwrite directories/files that exist
- -h, --help       output usage information```
+ -h, --help       output usage information
+ ```
