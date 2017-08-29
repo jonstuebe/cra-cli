@@ -18,10 +18,17 @@ program
   .option("-f, --force", "Overwrite directories/files that exist")
   .parse(process.argv);
 
-console.log(path.join(__dirname));
-process.exit();
+const baseDirectory = path.join(process.cwd());
 
-const baseDirectory = path.join(__dirname, "..");
+if (!fs.existsSync(path.join(baseDirectory, "src"))) {
+  console.error(
+    chalk.red(
+      "No src folder exists. This project was not created using create react app."
+    )
+  );
+  process.exit();
+}
+
 const componentsDirectory = path.join(baseDirectory, "src", "components");
 const containersDirectory = path.join(baseDirectory, "src", "containers");
 const createFolder = program.directory;
