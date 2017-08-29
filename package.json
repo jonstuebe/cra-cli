@@ -1,0 +1,16 @@
+{
+  "name": "cra-cli",
+  "version": "0.1.0",
+  "description": "a cli file generator (components & containers)",
+  "main": "index.js",
+  "repository": "https://github.com/jonstuebe/cra-cli",
+  "author": "Jon Stuebe <jstuebe@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^2.1.0",
+    "commander": "^2.11.0",
+    "inquirer": "^3.2.2",
+    "lodash": "^4.17.4",
+    "prettier": "^1.6.1"
+  }
+}
