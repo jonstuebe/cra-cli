@@ -1,6 +1,6 @@
+#!/usr/bin/env node
 const program = require("commander");
 const path = require("path");
-const pkg = require("../package.json");
 const _ = require("lodash");
 const prettier = require("prettier");
 const inquirer = require("inquirer");
@@ -14,18 +14,17 @@ program
   .version("0.1.0")
   .option("-c, --component", "Component")
   .option("-C, --container", "Container")
-  .option("-d, --directory", "Create Directories for Components/Containers")
+  .option("-d, --directory", "Create Directories for components/containers")
   .option("-f, --force", "Overwrite directories/files that exist")
   .parse(process.argv);
 
+console.log(path.join(__dirname));
+process.exit();
+
 const baseDirectory = path.join(__dirname, "..");
-const componentsDirectory = _.get(pkg, "cli.components")
-  ? path.join(baseDirectory, _.get(pkg, "cli.components"))
-  : path.join(baseDirectory, "src", "components");
-const containersDirectory = _.get(pkg, "cli.containers")
-  ? path.join(baseDirectory, _.get(pkg, "cli.containers"))
-  : path.join(baseDirectory, "src", "containers");
-const createFolder = program.directory || _.get(pkg, "cli.folders", false);
+const componentsDirectory = path.join(baseDirectory, "src", "components");
+const containersDirectory = path.join(baseDirectory, "src", "containers");
+const createFolder = program.directory;
 
 if (program.component || program.container) {
   const isEs6Class = function(opts) {
